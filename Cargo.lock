@@ -20,7 +20,7 @@ checksum = "330a5ed07fa54e4702c9d6c4174f74427fc0ef6e214bbd677ae50a5099946470"
 [[package]]
 name = "ariadne-core"
 version = "1.0.0"
-source = "git+https://github.com/mind-decay/Ariadne.git?branch=main#cdcdb0333aea83c15a8c9ef0de7cab3f15716ca8"
+source = "git+https://github.com/mind-decay/Ariadne.git?rev=cdcdb0333aea#cdcdb0333aea83c15a8c9ef0de7cab3f15716ca8"
 dependencies = [
  "serde",
  "thiserror",

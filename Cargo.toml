@@ -10,7 +10,10 @@
 #
 # `ariadne-core` comes from the workspace's own repository by git url, so this
 # crate builds from a fresh clone with nothing beside it — both repositories
-# are public, so no credential is involved. The consumer side unifies the two
+# are public, so no credential is involved. The rev is **pinned** rather than
+# tracking `main`: a branch would move this crate's core under it the next time
+# the workspace pushes, and the two would then disagree about which core a
+# green suite was green against. The consumer side unifies the two
 # copies: `mind-decay/Ariadne`'s root manifest carries a `[patch]` mapping this
 # url onto its local `crates/ariadne-core`, so the composition root links one
 # core and one `ScipFacts`.
@@ -34,7 +37,7 @@ rust_2018_idioms = { level = "warn", priority = -1 }
 pedantic = { level = "warn", priority = -1 }
 
 [dependencies]
-ariadne-core = { git = "https://github.com/mind-decay/Ariadne.git", branch = "main" }
+ariadne-core = { git = "https://github.com/mind-decay/Ariadne.git", rev = "cdcdb0333aea" }
 thiserror = "2"
 prost = "0.14"
 prost-types = "0.14"
