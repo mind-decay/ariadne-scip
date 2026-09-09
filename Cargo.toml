@@ -8,11 +8,11 @@
 # `protoc-bin-vendored`, which ships `protoc` bytes. Its cadence follows the
 # SCIP schema (`proto/SCIP_COMMIT`), not the workspace's releases.
 #
-# `ariadne-core` is a path dependency into the sibling checkout rather than a
-# git one: this repository's `origin` is a local bare clone, so a git
-# dependency would pin a sha nobody outside this machine can fetch either
-# way. The honest consequence is that this crate does not build from a fresh
-# clone alone — recorded in `docs/PILOT.md §5` of the hodos build.
+# `ariadne-core` comes from the workspace's own repository by git url, so this
+# crate builds from a fresh clone with nothing beside it. The consumer side
+# unifies the two copies: `mind-decay/Ariadne`'s root manifest carries a
+# `[patch]` mapping this url onto its local `crates/ariadne-core`, so the
+# composition root links one core and one `ScipFacts`.
 [package]
 name = "ariadne-scip"
 description = "Driven adapter: SCIP subprocess + protobuf Indexer port implementation."
@@ -33,7 +33,7 @@ rust_2018_idioms = { level = "warn", priority = -1 }
 pedantic = { level = "warn", priority = -1 }
 
 [dependencies]
-ariadne-core = { path = "../ariadne_v2/crates/ariadne-core" }
+ariadne-core = { git = "https://github.com/mind-decay/Ariadne.git", branch = "main" }
 thiserror = "2"
 prost = "0.14"
 prost-types = "0.14"
