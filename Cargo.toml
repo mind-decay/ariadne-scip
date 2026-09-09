@@ -9,10 +9,11 @@
 # SCIP schema (`proto/SCIP_COMMIT`), not the workspace's releases.
 #
 # `ariadne-core` comes from the workspace's own repository by git url, so this
-# crate builds from a fresh clone with nothing beside it. The consumer side
-# unifies the two copies: `mind-decay/Ariadne`'s root manifest carries a
-# `[patch]` mapping this url onto its local `crates/ariadne-core`, so the
-# composition root links one core and one `ScipFacts`.
+# crate builds from a fresh clone with nothing beside it — both repositories
+# are public, so no credential is involved. The consumer side unifies the two
+# copies: `mind-decay/Ariadne`'s root manifest carries a `[patch]` mapping this
+# url onto its local `crates/ariadne-core`, so the composition root links one
+# core and one `ScipFacts`.
 [package]
 name = "ariadne-scip"
 description = "Driven adapter: SCIP subprocess + protobuf Indexer port implementation."
