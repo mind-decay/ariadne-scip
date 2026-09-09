@@ -1,1 +1,8 @@
 /target
+.claude/hodos/tasks/
+.claude/hodos/active
+.claude/hodos/sessions/
+.claude/hodos/env/
+.claude/hodos/history.jsonl
+.claude/hodos/.digest-log
+.claude/settings.local.json

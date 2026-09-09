@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "language": "en",
+  "stack": ["rust"],
+  "commands": {
+    "test": "cargo test",
+    "typecheck": null,
+    "lint": "cargo clippy --all-targets --all-features -- -D warnings",
+    "build": "cargo build",
+    "dev": null
+  },
+  "verify": {
+    "recipes": [
+      {
+        "name": "unit",
+        "kind": "command",
+        "run": "cargo test",
+        "when": "always"
+      }
+    ]
+  },
+  "conventions": {
+    "commit": "conventional",
+    "branch": "feat/{slug}"
+  },
+  "models": {
+    "review": "opus",
+    "planReview": "opus",
+    "verify": "opus",
+    "preparer": "sonnet",
+    "research": "sonnet",
+    "initScan": "sonnet"
+  },
+  "autonomy": "ask",
+  "gates": {
+    "denyDangerousGit": false,
+    "blockCommitOnFailedReview": false,
+    "stopHookLedger": false
+  },
+  "adapters": {
+    "browser": null,
+    "docs": null,
+    "codeIndex": null,
+    "design": null,
+    "tracker": null,
+    "logs": null,
+    "db": null,
+    "ci": null
+  },
+  "campaigns": { "external": ["../ariadne_v2/.claude/hodos/campaigns"] },
+  "tasks": { "staleDays": 14 },
+  "verifiedAt": "2026-09-09"
+}
